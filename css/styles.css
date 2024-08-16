@@ -1,0 +1,46 @@
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url('../img/under_development.png') no-repeat center center fixed;
+    background-size: cover;
+    font-family: "Orbitron", sans-serif;
+    color: #333;
+}
+
+.container {
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.8); /* Optional: add a semi-transparent background */
+    padding: 20px;
+    border-radius: 8px;
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #444;
+}
+
+p {
+    font-size: 1.2rem;
+    color: #666;
+}
+
+.spinner {
+    margin-top: 30px;
+    width: 50px;
+    height: 50px;
+    border: 8px solid #f3f3f3;
+    border-top: 8px solid #3498db;
+    border-radius: 50%;
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
