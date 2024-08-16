@@ -16,9 +16,10 @@ jobs:
     - name: Deploy to FTP server
       uses: SamKirkland/FTP-Deploy-Action@4.1.0
       with:
-        server: ${{ secrets.FTP_SERVER }}       # FTP server URL
-        username: ${{ secrets.FTP_USERNAME }}   # FTP username
-        password: ${{ secrets.FTP_PASSWORD }}   # FTP password
-        local-dir: ./                           # Directory in your repo to deploy
-        server-dir: /public_html/               # Target directory on the FTP server
+        server: ${{ secrets.FTP_SERVER }}
+        username: ${{ secrets.FTP_USERNAME }}
+        password: ${{ secrets.FTP_PASSWORD }}
+        port: 21               # Explicitly use FTP on port 21
+        local-dir: ./          # Adjust to the directory you want to deploy
+        server-dir: /public_html/ # Adjust to your server directory
 
