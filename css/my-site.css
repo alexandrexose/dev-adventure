@@ -48,8 +48,28 @@ body {
 
 .menu li {
     padding: 1rem;
+    padding: 5px;
     border-top: 1px solid var(--color-border);
     position: relative;
+}
+
+.menu li.section{
+    cursor:default;
+}
+
+/* General link styling */
+.menu li, .menu li a {
+    /*padding: 10px 15px; /* Add padding to both list items and links */
+    display: block; /* Make both list items and links take up the full width */
+    color: var(--color-text); /* Use the text color defined in the palette */
+    text-decoration: none; /* Remove underline from links */
+}
+
+/* Hover effects for links */
+.menu li a:hover {
+    background-color: var(--color-primary); /* Neon Green background on hover */
+    color: var(--color-background); /* Change text color to match background */
+    border-radius: 4px; /* Add a slight border-radius for a rounded look */
 }
 
 /* Sub-menus are hidden by default */
@@ -60,10 +80,12 @@ body {
     background-color: var(--color-secondary);
     border: 1px solid var(--color-border);
     position: relative;
+    border-radius: 4px; /* Add rounded corners to the sub-menu */
 }
 
+/* Show sub-menus when the parent item is active */
 .menu li.active ul {
-    display: block; /* Show sub-menus when the parent item is active */
+    display: block;
 }
 
 /* Showing sub-menus on hover in desktop view */
@@ -71,12 +93,13 @@ body {
     display: block;
 }
 
-/* Ensure that the sub-menus appear indented under the main menu items */
+/* Sub-menu styling for desktop */
 .menu li ul {
-    padding-left: 20px;
+    padding: 5px 0; /* Add some padding around the sub-menu */
+    background-color: var(--color-secondary); /* Ensure the background matches the rest of the menu */
 }
 
-/* Media query for desktop view */
+/* Additional padding for desktop view */
 @media(min-width: 768px) {
     .hamburger {
         display: none; /* Hide the hamburger on larger screens */
@@ -89,16 +112,19 @@ body {
 
     .menu li {
         border-top: none;
-        padding: 0 1rem;
+        padding: 5px;
     }
 
-    /* Sub-menus are now positioned below each item */
     .menu li ul {
-        display: none;
+        /*padding: 5px 10px; /* Add padding inside the sub-menu */
         position: absolute;
         left: 0;
         top: 100%;
         width: auto;
+    }
+
+    .menu li a {
+        /*padding: 10px 15px; /* Ensure links inside sub-menus have padding */
     }
 
     .menu li:hover ul {
@@ -117,22 +143,69 @@ body {
     width: 90%; /* Image takes up 90% of the container width */
     height: auto;
     max-width: 100%; /* Ensures the image does not exceed the container's width */
+    max-height: 60vh; /* Limits the image height to 60% of the viewport height */
     border-radius: 8px;
     border: 2px solid var(--color-border);
+    object-fit: cover; /* Ensures the image covers the container without distortion */
 }
 
-/* Link Styling */
-a {
-    color: var(--color-accent-blue); /* Electric Blue */
-    text-decoration: none; /* Remove underline */
+
+/* Styling for the h1 and p elements */
+h1 {
+    text-align: center; /* Center the text */
+    margin-top: 20px; /* Add some space above the heading */
+    font-size: 2rem; /* Adjust the font size */
+    color: var(--color-text); /* Use the text color from the palette */
 }
 
-a:hover {
+p {
+    text-align:left;
+    max-width: 80%; /* Restrict the width of the paragraph */
+    margin: 10px auto 30px; /* Center the paragraph with margin */
+    line-height: 1.6; /* Increase line spacing for readability */
+    color: var(--color-text); /* Use the text color from the palette */
+}
+
+/* Footer Styling */
+footer {
+    background-color: var(--color-secondary); /* Dark Slate Gray background */
+    padding: 20px 0;
+    text-align: center;
+    color: var(--color-text); /* White Smoke text color */
+    margin-top: 40px; /* Add space between the content and the footer */
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.footer-links {
+    list-style-type: none;
+    padding: 0;
+    margin-bottom: 20px;
+}
+
+.footer-links li {
+    display: inline-block;
+    margin: 0 15px;
+}
+
+.footer-links a {
+    color: var(--color-text); /* Electric Blue link color */
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
     color: var(--color-primary); /* Neon Green on hover */
-    text-decoration: underline; /* Optional: Add underline on hover */
 }
 
-a:visited {
-    color: var(--color-accent-blue); /* Keep the same color for visited links */
+footer p {
+    font-size: 0.9rem;
+    color: var(--color-text); /* White Smoke color for the copyright text */
+    text-align: center;
 }
 
