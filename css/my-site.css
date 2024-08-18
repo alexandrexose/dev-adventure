@@ -83,6 +83,10 @@ body {
     border-radius: 4px; /* Add rounded corners to the sub-menu */
 }
 
+.menu li ul.open {
+    display: block; /* Show sub-menus when they have the 'open' class */
+}
+
 /* Show sub-menus when the parent item is active */
 .menu li.active ul {
     display: block;
