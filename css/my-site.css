@@ -1,0 +1,138 @@
+/* CSS Variables for Color Palette */
+:root {
+    --color-background: #0A0A0A; /* Jet Black */
+    --color-primary: #00FF41; /* Neon Green */
+    --color-secondary: #2E2E2E; /* Dark Slate Gray */
+    --color-accent-blue: #1FB6FF; /* Electric Blue */
+    --color-heading: #2C3E50; /* Gunmetal */
+    --color-text: #F5F5F5; /* White Smoke */
+    --color-border: #2E2E2E; /* Dark Slate Gray */
+}
+
+/* Resetting some default browser styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--color-background);
+    font-family: Arial, sans-serif;
+    color: var(--color-text);
+}
+
+/* The navigation bar */
+#mobile-nav {
+    position: relative;
+    background-color: var(--color-secondary);
+}
+
+.hamburger {
+    font-size: 2rem;
+    cursor: pointer;
+    padding: 1rem;
+    color: var(--color-text);
+}
+
+/* The menu is hidden by default on mobile */
+.menu {
+    display: none;
+    list-style-type: none;
+    padding: 0;
+}
+
+.menu.active {
+    display: block; /* Ensure the menu is displayed when active */
+}
+
+.menu li {
+    padding: 1rem;
+    border-top: 1px solid var(--color-border);
+    position: relative;
+}
+
+/* Sub-menus are hidden by default */
+.menu li ul {
+    display: none;
+    list-style-type: none;
+    padding-left: 0;
+    background-color: var(--color-secondary);
+    border: 1px solid var(--color-border);
+    position: relative;
+}
+
+.menu li.active ul {
+    display: block; /* Show sub-menus when the parent item is active */
+}
+
+/* Showing sub-menus on hover in desktop view */
+.menu li:hover ul {
+    display: block;
+}
+
+/* Ensure that the sub-menus appear indented under the main menu items */
+.menu li ul {
+    padding-left: 20px;
+}
+
+/* Media query for desktop view */
+@media(min-width: 768px) {
+    .hamburger {
+        display: none; /* Hide the hamburger on larger screens */
+    }
+
+    .menu {
+        display: flex; /* Show the menu in a row */
+        justify-content: space-around;
+    }
+
+    .menu li {
+        border-top: none;
+        padding: 0 1rem;
+    }
+
+    /* Sub-menus are now positioned below each item */
+    .menu li ul {
+        display: none;
+        position: absolute;
+        left: 0;
+        top: 100%;
+        width: auto;
+    }
+
+    .menu li:hover ul {
+        display: block;
+    }
+}
+
+/* Image container styling */
+.image-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.image-container img {
+    width: 90%; /* Image takes up 90% of the container width */
+    height: auto;
+    max-width: 100%; /* Ensures the image does not exceed the container's width */
+    border-radius: 8px;
+    border: 2px solid var(--color-border);
+}
+
+/* Link Styling */
+a {
+    color: var(--color-accent-blue); /* Electric Blue */
+    text-decoration: none; /* Remove underline */
+}
+
+a:hover {
+    color: var(--color-primary); /* Neon Green on hover */
+    text-decoration: underline; /* Optional: Add underline on hover */
+}
+
+a:visited {
+    color: var(--color-accent-blue); /* Keep the same color for visited links */
+}
+
