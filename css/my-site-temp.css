@@ -143,9 +143,12 @@ body {
     width: 90%; /* Image takes up 90% of the container width */
     height: auto;
     max-width: 100%; /* Ensures the image does not exceed the container's width */
+    max-height: 60vh; /* Limits the image height to 60% of the viewport height */
     border-radius: 8px;
     border: 2px solid var(--color-border);
+    object-fit: cover; /* Ensures the image covers the container without distortion */
 }
+
 
 /* Styling for the h1 and p elements */
 h1 {
@@ -203,6 +206,6 @@ footer {
 footer p {
     font-size: 0.9rem;
     color: var(--color-text); /* White Smoke color for the copyright text */
-    text-align: left;
+    text-align: center;
 }
 
