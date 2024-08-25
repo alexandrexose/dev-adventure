@@ -1,0 +1,121 @@
+openapi: 3.0.0
+info:
+  title: Bored API Documentation
+  description: This is a simple API that returns a random activity to do when you're bored.
+  version: 1.0.0
+
+servers:
+  - url: https://bored.api.lewagon.com
+    description: Bored API Server
+
+paths:
+  /activity:
+    get:
+      tags:
+        - Activity
+      summary: Get a random activity
+      description: This endpoint returns a random activity that you can do, or retrieves a specific activity using query parameters.
+      parameters:
+        - in: query
+          name: key
+          required: false
+          schema:
+            type: string
+          description: The key for the activity you want to retrieve (optional).
+        - in: query
+          name: type
+          required: false
+          schema:
+            type: string
+            enum:
+              - recreational
+              - education
+              - social
+              - relaxation
+              - diy
+              - charity
+              - cooking
+              - music
+              - busywork
+          description: Find a random activity with a given type (optional).
+        - in: query
+          name: participants
+          required: false
+          schema:
+            type: integer
+          description: Find a random activity with a given number of participants (optional).
+        - in: query
+          name: price
+          required: false
+          schema:
+            type: number
+            format: float
+          description: Find an activity with a specified price (optional).
+        - in: query
+          name: minprice
+          required: false
+          schema:
+            type: number
+            format: float
+          description: Minimum price to filter activities (optional).
+        - in: query
+          name: maxprice
+          required: false
+          schema:
+            type: number
+            format: float
+          description: Maximum price to filter activities (optional).
+        - in: query
+          name: accessibility
+          required: false
+          schema:
+            type: number
+            format: float
+          description: Find an activity with a specified accessibility (optional).
+        - in: query
+          name: minaccessibility
+          required: false
+          schema:
+            type: number
+            format: float
+          description: Minimum accessibility to filter activities (optional).
+        - in: query
+          name: maxaccessibility
+          required: false
+          schema:
+            type: number
+            format: float
+          description: Maximum accessibility to filter activities (optional).
+      responses:
+        "200":
+          description: Successfully retrieved the activity.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  activity:
+                    type: string
+                    example: "Learn Express.js"
+                  accessibility:
+                    type: number
+                    format: float
+                    example: 0.25
+                  type:
+                    type: string
+                    example: "education"
+                  participants:
+                    type: integer
+                    example: 1
+                  price:
+                    type: number
+                    format: float
+                    example: 0.1
+                  link:
+                    type: string
+                    example: "https://expressjs.com/"
+                  key:
+                    type: string
+                    example: "3943506"
+        "404":
+          description: Activity not found.
