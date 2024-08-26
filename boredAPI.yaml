@@ -5,7 +5,7 @@ info:
   version: 1.0.0
 
 servers:
-  - url: https://bored.api.lewagon.com
+  - url: http://bored.api.lewagon.com
     description: Bored API Server
 
 paths:
