@@ -2,7 +2,7 @@
 header("Access-Control-Allow-Origin: *");
 header("Content-Type: application/json");
 
-$url = "http://bored.api.lewagon.com" . $_SERVER['REQUEST_URI'];
+$url = "http://bored.api.lewagon.com/api" . $_SERVER['REQUEST_URI'];
 
 // Initialize cURL session
 $ch = curl_init($url);
